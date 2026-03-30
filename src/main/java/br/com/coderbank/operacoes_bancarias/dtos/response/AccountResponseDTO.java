@@ -1,4 +1,4 @@
-package br.com.coderbank.operacoes_bancarias.dtos.contas.response;
+package br.com.coderbank.operacoes_bancarias.dtos.response;
 
 import br.com.coderbank.operacoes_bancarias.entities.Account;
 

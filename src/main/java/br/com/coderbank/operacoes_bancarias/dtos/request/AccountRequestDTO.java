@@ -1,4 +1,4 @@
-package br.com.coderbank.operacoes_bancarias.dtos.contas.request;
+package br.com.coderbank.operacoes_bancarias.dtos.request;
 
 import java.util.UUID;
 

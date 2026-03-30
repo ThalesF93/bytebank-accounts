@@ -1,8 +1,7 @@
-package br.com.coderbank.operacoes_bancarias.services.contas;
+package br.com.coderbank.operacoes_bancarias.services;
 
-import br.com.coderbank.operacoes_bancarias.dtos.contas.request.AccountRequestDTO;
-import br.com.coderbank.operacoes_bancarias.dtos.contas.response.AccountResponseDTO;
-import br.com.coderbank.operacoes_bancarias.dtos.transacoes.responses.TransactionResponseDTO;
+import br.com.coderbank.operacoes_bancarias.dtos.request.AccountRequestDTO;
+import br.com.coderbank.operacoes_bancarias.dtos.response.AccountResponseDTO;
 import br.com.coderbank.operacoes_bancarias.entities.Account;
 import br.com.coderbank.operacoes_bancarias.exceptions.AccountNotFoundException;
 import br.com.coderbank.operacoes_bancarias.exceptions.ClosingAccountException;
@@ -63,14 +62,5 @@ public class AccountService {
                 .collect(Collectors.toList());
     }
 
-    @Transactional
-    public List<TransactionResponseDTO> generateBankStatement(UUID id)  {
-        Account account = accountRepository.findById(id)
-                .orElseThrow(()-> new AccountNotFoundException("Account not found"));
 
-        return account.getTransactions()
-                .stream()
-                .map(t-> new TransactionResponseDTO(t.getId(), t.getType(), t.getAmount(), t.getDescription(), t.getDateTime()))
-                .toList();
-    }
 }
