@@ -1,4 +1,4 @@
-package br.com.coderbank.operacoes_bancarias.exceptions;
+package br.com.bytebank.accounts.exceptions;
 
 public class CustomerNotFoundException extends RuntimeException {
     public CustomerNotFoundException(String message) {

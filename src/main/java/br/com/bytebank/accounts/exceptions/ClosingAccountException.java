@@ -1,4 +1,4 @@
-package br.com.coderbank.operacoes_bancarias.exceptions;
+package br.com.bytebank.accounts.exceptions;
 
 public class ClosingAccountException extends RuntimeException {
     public ClosingAccountException(String message) {

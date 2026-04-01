@@ -1,13 +1,13 @@
-package br.com.coderbank.operacoes_bancarias;
+package br.com.bytebank.accounts;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class OperacoesBancariasApplication {
+public class AccountsApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(OperacoesBancariasApplication.class, args);
+		SpringApplication.run(AccountsApplication.class, args);
 	}
 
 }

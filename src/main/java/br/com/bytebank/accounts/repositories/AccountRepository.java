@@ -1,6 +1,6 @@
-package br.com.coderbank.operacoes_bancarias.repositories;
+package br.com.bytebank.accounts.repositories;
 
-import br.com.coderbank.operacoes_bancarias.entities.Account;
+import br.com.bytebank.accounts.entities.Account;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.UUID;

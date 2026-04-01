@@ -1,8 +1,8 @@
-package br.com.coderbank.operacoes_bancarias.global;
+package br.com.bytebank.accounts.global;
 
-import br.com.coderbank.operacoes_bancarias.exceptions.AccountNotFoundException;
-import br.com.coderbank.operacoes_bancarias.exceptions.CustomerNotFoundException;
-import br.com.coderbank.operacoes_bancarias.exceptions.SameAccountException;
+import br.com.bytebank.accounts.exceptions.AccountNotFoundException;
+import br.com.bytebank.accounts.exceptions.CustomerNotFoundException;
+import br.com.bytebank.accounts.exceptions.SameAccountException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ProblemDetail;
 import org.springframework.validation.FieldError;

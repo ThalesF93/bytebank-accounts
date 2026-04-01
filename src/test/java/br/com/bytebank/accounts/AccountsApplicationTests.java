@@ -1,10 +1,10 @@
-package br.com.coderbank.operacoes_bancarias;
+package br.com.bytebank.accounts;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class OperacoesBancariasApplicationTests {
+class AccountsApplicationTests {
 
 	@Test
 	void contextLoads() {

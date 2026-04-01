@@ -1,6 +1,6 @@
-package br.com.coderbank.operacoes_bancarias.dtos.response;
+package br.com.bytebank.accounts.dtos.response;
 
-import br.com.coderbank.operacoes_bancarias.entities.Account;
+import br.com.bytebank.accounts.entities.Account;
 
 import java.math.BigDecimal;
 import java.util.UUID;

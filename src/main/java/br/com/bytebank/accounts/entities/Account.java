@@ -1,4 +1,4 @@
-package br.com.coderbank.operacoes_bancarias.entities;
+package br.com.bytebank.accounts.entities;
 
 
 import jakarta.persistence.*;

@@ -1,4 +1,4 @@
-package br.com.coderbank.operacoes_bancarias.dtos.request;
+package br.com.bytebank.accounts.dtos.request;
 
 import jakarta.validation.constraints.Positive;
 

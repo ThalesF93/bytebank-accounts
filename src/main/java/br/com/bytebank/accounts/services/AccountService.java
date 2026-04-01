@@ -1,14 +1,14 @@
-package br.com.coderbank.operacoes_bancarias.services;
+package br.com.bytebank.accounts.services;
 
-import br.com.coderbank.operacoes_bancarias.dtos.request.AccountRequestDTO;
-import br.com.coderbank.operacoes_bancarias.dtos.request.DepositRequestDTO;
-import br.com.coderbank.operacoes_bancarias.dtos.request.WithdrawRequestDTO;
-import br.com.coderbank.operacoes_bancarias.dtos.response.AccountResponseDTO;
-import br.com.coderbank.operacoes_bancarias.entities.Account;
-import br.com.coderbank.operacoes_bancarias.exceptions.AccountNotFoundException;
-import br.com.coderbank.operacoes_bancarias.exceptions.ClosingAccountException;
-import br.com.coderbank.operacoes_bancarias.exceptions.InsufficientBalanceException;
-import br.com.coderbank.operacoes_bancarias.repositories.AccountRepository;
+import br.com.bytebank.accounts.dtos.request.AccountRequestDTO;
+import br.com.bytebank.accounts.dtos.request.DepositRequestDTO;
+import br.com.bytebank.accounts.dtos.request.WithdrawRequestDTO;
+import br.com.bytebank.accounts.dtos.response.AccountResponseDTO;
+import br.com.bytebank.accounts.entities.Account;
+import br.com.bytebank.accounts.exceptions.AccountNotFoundException;
+import br.com.bytebank.accounts.exceptions.ClosingAccountException;
+import br.com.bytebank.accounts.exceptions.InsufficientBalanceException;
+import br.com.bytebank.accounts.repositories.AccountRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
