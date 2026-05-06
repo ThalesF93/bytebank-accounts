@@ -1,13 +1,12 @@
-package br.com.bytebank.accounts.global;
+package br.com.bytebank.accounts.domain.exceptions.handler;
 
-import br.com.bytebank.accounts.exceptions.AccountNotFoundException;
-import br.com.bytebank.accounts.exceptions.CustomerNotFoundException;
-import br.com.bytebank.accounts.exceptions.SameAccountException;
+import br.com.bytebank.accounts.domain.exceptions.AccountNotFoundException;
+import br.com.bytebank.accounts.domain.exceptions.CustomerNotFoundException;
+import br.com.bytebank.accounts.domain.exceptions.SameAccountException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ProblemDetail;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
-import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import java.net.URI;
@@ -15,9 +14,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 @RestControllerAdvice
-public class GlobalExceptionHandler {
+public class ExceptionHandler {
 
-    @ExceptionHandler(MethodArgumentNotValidException.class)
+    @org.springframework.web.bind.annotation.ExceptionHandler(MethodArgumentNotValidException.class)
     public ProblemDetail handleValidation(final MethodArgumentNotValidException exception){
 
         Map<String, String> validationErrors = buildValidationErrorResponse(exception);
@@ -34,7 +33,7 @@ public class GlobalExceptionHandler {
         return problemDetail;
     }
 
-    @ExceptionHandler(AccountNotFoundException.class)
+    @org.springframework.web.bind.annotation.ExceptionHandler(AccountNotFoundException.class)
     public ProblemDetail handleAccountNotFound(final Throwable exception){
 
         ProblemDetail problemDetail = ProblemDetail.forStatusAndDetail(
@@ -47,7 +46,7 @@ public class GlobalExceptionHandler {
 
         return problemDetail;
     }
-    @ExceptionHandler(CustomerNotFoundException.class)
+    @org.springframework.web.bind.annotation.ExceptionHandler(CustomerNotFoundException.class)
     public ProblemDetail handleCustomerNotFound(final Throwable exception){
 
         ProblemDetail problemDetail = ProblemDetail.forStatusAndDetail(
@@ -61,7 +60,7 @@ public class GlobalExceptionHandler {
         return problemDetail;
     }
 
-    @ExceptionHandler(SameAccountException.class)
+    @org.springframework.web.bind.annotation.ExceptionHandler(SameAccountException.class)
     public ProblemDetail handleSameAccount(final Throwable exception){
 
         ProblemDetail problemDetail = ProblemDetail.forStatusAndDetail(

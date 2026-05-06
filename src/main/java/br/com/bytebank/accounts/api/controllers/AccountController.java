@@ -1,10 +1,10 @@
-package br.com.bytebank.accounts.controllers;
+package br.com.bytebank.accounts.api.controllers;
 
-import br.com.bytebank.accounts.dtos.request.AccountRequestDTO;
-import br.com.bytebank.accounts.dtos.request.DepositRequestDTO;
-import br.com.bytebank.accounts.dtos.request.WithdrawRequestDTO;
-import br.com.bytebank.accounts.dtos.response.AccountResponseDTO;
-import br.com.bytebank.accounts.services.AccountService;
+import br.com.bytebank.accounts.api.dtos.request.AccountRequestDTO;
+import br.com.bytebank.accounts.api.dtos.request.DepositRequestDTO;
+import br.com.bytebank.accounts.api.dtos.request.WithdrawRequestDTO;
+import br.com.bytebank.accounts.api.dtos.response.AccountResponseDTO;
+import br.com.bytebank.accounts.application.impl.AccountServiceImpl;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -21,7 +21,7 @@ import java.util.UUID;
 public class AccountController {
 
 
-    private final AccountService accountService;
+    private final AccountServiceImpl accountService;
 
 
     @PostMapping

@@ -1,14 +1,15 @@
-package br.com.bytebank.accounts.services;
+package br.com.bytebank.accounts.application.impl;
 
-import br.com.bytebank.accounts.dtos.request.AccountRequestDTO;
-import br.com.bytebank.accounts.dtos.request.DepositRequestDTO;
-import br.com.bytebank.accounts.dtos.request.WithdrawRequestDTO;
-import br.com.bytebank.accounts.dtos.response.AccountResponseDTO;
-import br.com.bytebank.accounts.entities.Account;
-import br.com.bytebank.accounts.exceptions.AccountNotFoundException;
-import br.com.bytebank.accounts.exceptions.ClosingAccountException;
-import br.com.bytebank.accounts.exceptions.InsufficientBalanceException;
-import br.com.bytebank.accounts.repositories.AccountRepository;
+import br.com.bytebank.accounts.api.dtos.request.AccountRequestDTO;
+import br.com.bytebank.accounts.api.dtos.request.DepositRequestDTO;
+import br.com.bytebank.accounts.api.dtos.request.WithdrawRequestDTO;
+import br.com.bytebank.accounts.api.dtos.response.AccountResponseDTO;
+import br.com.bytebank.accounts.application.services.AccountService;
+import br.com.bytebank.accounts.domain.entities.Account;
+import br.com.bytebank.accounts.domain.exceptions.AccountNotFoundException;
+import br.com.bytebank.accounts.domain.exceptions.ClosingAccountException;
+import br.com.bytebank.accounts.domain.exceptions.InsufficientBalanceException;
+import br.com.bytebank.accounts.infrastructure.repositories.AccountRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -23,11 +24,12 @@ import java.util.stream.Collectors;
 @Service
 @Slf4j
 @RequiredArgsConstructor
-public class AccountService {
+public class AccountServiceImpl implements AccountService {
 
     private final AccountRepository accountRepository;
 
     @Transactional
+    @Override
     public AccountResponseDTO openAccount(AccountRequestDTO accountRequestDTO){
 
         Account account = new Account();
@@ -39,6 +41,7 @@ public class AccountService {
         return new AccountResponseDTO(account.getId(), account.getCustomerId(), account.getAgency(), account.getBalance());
     }
 
+    @Override
     public AccountResponseDTO findAccountById(UUID uuid){
         var account = accountRepository.findById(uuid)
                 .orElseThrow(()-> new AccountNotFoundException("Account not found"));
@@ -48,6 +51,7 @@ public class AccountService {
     }
 
     @Transactional
+    @Override
     public void closeAccount(UUID id){
         Account account = accountRepository.findById(id)
                 .orElseThrow(()-> new AccountNotFoundException("Account not found"));
@@ -57,6 +61,7 @@ public class AccountService {
         accountRepository.deleteById(id);
     }
 
+    @Override
     public List<AccountResponseDTO> showAccountsByBalance(){
         return accountRepository.findAll()
                 .stream()
@@ -70,6 +75,7 @@ public class AccountService {
                 .orElseThrow(() -> new AccountNotFoundException("Account not found"));
     }
 
+    @Override
     public void debit(WithdrawRequestDTO withdrawRequestDTO) {
        Account account = getAccount(withdrawRequestDTO.accountId());
        balanceValidation(account, withdrawRequestDTO.amount());
@@ -78,6 +84,7 @@ public class AccountService {
        accountRepository.save(account);
     }
 
+    @Override
     public void credit(DepositRequestDTO depositRequestDTO) {
         Account account = getAccount(depositRequestDTO.accountId());
 

@@ -1,4 +1,4 @@
-package br.com.bytebank.accounts.dtos.request;
+package br.com.bytebank.accounts.api.dtos.request;
 
 import jakarta.validation.constraints.Positive;
 
