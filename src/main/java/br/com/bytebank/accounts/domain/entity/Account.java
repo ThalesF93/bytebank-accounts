@@ -1,4 +1,4 @@
-package br.com.bytebank.accounts.domain.entities;
+package br.com.bytebank.accounts.domain.entity;
 
 
 import jakarta.persistence.*;

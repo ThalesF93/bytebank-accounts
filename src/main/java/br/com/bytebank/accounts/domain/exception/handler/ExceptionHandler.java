@@ -1,8 +1,8 @@
-package br.com.bytebank.accounts.domain.exceptions.handler;
+package br.com.bytebank.accounts.domain.exception.handler;
 
-import br.com.bytebank.accounts.domain.exceptions.AccountNotFoundException;
-import br.com.bytebank.accounts.domain.exceptions.CustomerNotFoundException;
-import br.com.bytebank.accounts.domain.exceptions.SameAccountException;
+import br.com.bytebank.accounts.domain.exception.AccountNotFoundException;
+import br.com.bytebank.accounts.domain.exception.CustomerNotFoundException;
+import br.com.bytebank.accounts.domain.exception.SameAccountException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ProblemDetail;
 import org.springframework.validation.FieldError;

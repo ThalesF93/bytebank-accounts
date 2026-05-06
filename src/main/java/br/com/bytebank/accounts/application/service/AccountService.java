@@ -1,4 +1,4 @@
-package br.com.bytebank.accounts.application.services;
+package br.com.bytebank.accounts.application.service;
 
 import br.com.bytebank.accounts.api.dtos.request.AccountRequestDTO;
 import br.com.bytebank.accounts.api.dtos.request.DepositRequestDTO;
