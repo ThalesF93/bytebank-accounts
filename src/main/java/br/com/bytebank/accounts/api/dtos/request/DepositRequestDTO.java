@@ -2,6 +2,7 @@ package br.com.bytebank.accounts.api.dtos.request;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
 
 import java.math.BigDecimal;
@@ -11,12 +12,12 @@ import java.util.UUID;
 public record DepositRequestDTO(
 
         @Schema(description = "Account id to be deposited")
-        @NotBlank
+        @NotNull
         UUID accountId,
 
         @Positive
         @Schema(description = "Value to deposit")
-        @NotBlank
+        @NotNull
         BigDecimal amount
 ) {
 }

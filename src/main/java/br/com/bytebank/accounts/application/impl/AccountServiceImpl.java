@@ -43,8 +43,10 @@ public class AccountServiceImpl implements AccountService {
 
         if (accountRepository.existsByAccountNumber(account.getAccountNumber())){
             log.warn("Account already exists for customerId={}, skipping", accountRequestDTO.customerId());
-            throw new DuplicateAccountException(UUID.fromString(account.getAccountNumber()));
+            throw new DuplicateAccountException(account.getAccountNumber());
         }
+
+        account.setActive(true);
         accountRepository.save(account);
 
         log.info("Account opened. accountId={}", account.getId());

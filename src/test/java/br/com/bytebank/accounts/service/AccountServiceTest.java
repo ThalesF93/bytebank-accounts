@@ -62,7 +62,10 @@ class AccountServiceTest {
     @DisplayName("Should return Duplicate Account Exception")
     void mustThrowExceptionOnOpeningAccount(){
         AccountRequestDTO accountDTO = new AccountRequestDTO(UUID.randomUUID());
-        Mockito.when(accountRepository.existsByCustomerId(accountDTO.customerId())).thenReturn(true);
+        Account account = new Account();
+        account.setCustomerId(accountDTO.customerId());
+
+        Mockito.when(accountRepository.existsByAccountNumber(anyString())).thenReturn(true);
 
         assertThatExceptionOfType(DuplicateAccountException.class)
                 .isThrownBy(()-> accountService.openAccount(accountDTO));
@@ -122,7 +125,7 @@ class AccountServiceTest {
 
         assertThatExceptionOfType(AccountNotFoundException.class)
                 .isThrownBy(()-> accountService.closeAccount(account.getId()))
-                .withMessage("Account already inactive or do not exist");
+                .withMessage("Account with id= " + account.getId() + " not found");
 
         verify(accountRepository, never()).save(any());
     }
@@ -140,7 +143,7 @@ class AccountServiceTest {
 
         assertThatExceptionOfType(ClosingAccountException.class)
                 .isThrownBy(()-> accountService.closeAccount(account.getId()))
-                .withMessage("Cannot close account with balance bigger than 0");
+                .withMessage("Account with id= " + account.getId() + " has balance  0 ");
 
         verify(accountRepository, never()).save(any());
     }
@@ -193,7 +196,7 @@ class AccountServiceTest {
 
         assertThatExceptionOfType(AccountNotFoundException.class)
                 .isThrownBy(()-> accountService.findCustomerByAccountId(id))
-                .withMessage("Account not found");
+                .withMessage("Account with id= " + id + " not found");
 
         verify(customerClient, never()).findCustomerById(UUID.randomUUID());
     }
@@ -202,9 +205,10 @@ class AccountServiceTest {
     @DisplayName("Should throw Customer not found exception when passing nonexisting customer id")
     void mustThrowExceptionWhenCustomerClientDoesntFind(){
         UUID id = UUID.randomUUID();
+        UUID customerId = UUID.randomUUID();
         Account account = new Account();
         account.setId(id);
-        account.setCustomerId(null);
+        account.setCustomerId(customerId);
 
         when(accountRepository.findById(id)).thenReturn(Optional.of(account));
         when(customerClient.findCustomerById(account.getCustomerId())).thenThrow(new CustomerNotFoundException(account.getCustomerId()));
@@ -212,7 +216,7 @@ class AccountServiceTest {
 
         assertThatExceptionOfType(CustomerNotFoundException.class)
                 .isThrownBy(()-> accountService.findCustomerByAccountId(id))
-                        .withMessage("Customer not found id= " + account.getCustomerId());
+                        .withMessage("Customer with id " + customerId + " not found");
     }
 
     @Test
@@ -247,7 +251,7 @@ class AccountServiceTest {
         when(accountRepository.findById(id)).thenReturn(Optional.of(account));
         assertThatExceptionOfType(InsufficientBalanceException.class)
                 .isThrownBy(()-> accountService.debit(withdraw))
-                .withMessage("Unauthorized operation! Withdraw must not be more than balance");
+                .withMessage("Not enough balance in account with id = " + id);
 
         verify(accountRepository, never()).save(account);
     }
@@ -273,7 +277,7 @@ class AccountServiceTest {
 
         assertThatExceptionOfType(CustomerNotFoundException.class)
                 .isThrownBy(() -> accountService.listAccountByCostumer(id))
-                .withMessage("Customer not found with id: " + id);
+                .withMessage("Customer with id " + id + " not found");
     }
 
     @Test
@@ -299,7 +303,7 @@ class AccountServiceTest {
 
         assertThatExceptionOfType(AccountNotFoundException.class)
                 .isThrownBy(()-> accountService.getBalance(id))
-                .withMessage("Account not found");
+                .withMessage("Account with id= " + id + " not found");
     }
 
 }

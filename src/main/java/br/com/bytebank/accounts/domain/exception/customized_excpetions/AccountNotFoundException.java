@@ -8,6 +8,6 @@ import java.util.UUID;
 public class AccountNotFoundException extends DefaultException {
 
     public AccountNotFoundException(UUID id) {
-            super("ACCOUNT_NOT_FOUND", "Account with " + id + "not found", HttpStatus.NOT_FOUND);
+            super("ACCOUNT_NOT_FOUND", "Account with id= " + id + " not found", HttpStatus.NOT_FOUND);
     }
 }
