@@ -22,7 +22,7 @@ import java.util.List;
 import java.util.UUID;
 
 
-@Tag(name = "Accounts")
+@Tag(name = "MS - Accounts")
 public interface AccountControllerOpenApi {
 
     @Operation(summary = "Open Account", description = "Open Account After receiving a Customer Created Event")
