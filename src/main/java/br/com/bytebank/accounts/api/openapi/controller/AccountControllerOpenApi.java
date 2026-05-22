@@ -33,8 +33,8 @@ public interface AccountControllerOpenApi {
                     content = @Content(schema = @Schema(implementation = AccountResponseDTO.class))),
 
             @ApiResponse(
-                    responseCode = "422",
-                    description = "Unprocessable Entity",
+                    responseCode = "409",
+                    description = "Conflict",
                     content = @Content(schema = @Schema(implementation = ErrorResponse.class))),
 
             @ApiResponse(

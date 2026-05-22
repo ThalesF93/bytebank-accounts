@@ -7,6 +7,6 @@ import java.util.UUID;
 
 public class DuplicateAccountException extends DefaultException {
     public DuplicateAccountException(String accountNumber) {
-        super("DUPLICATE_ACCOUNT","Account with number = " + accountNumber + " already exists" , HttpStatus.UNPROCESSABLE_ENTITY);
+        super("DUPLICATE_ACCOUNT","Account with number = " + accountNumber + " already exists" , HttpStatus.CONFLICT);
     }
 }

@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Configuration;
 
 @OpenAPIDefinition(
         servers = {
-                @Server(url = "http://localhost:8080", description = "Via Gateway")
+                @Server(url = "http://localhost:8080", description = "Gateway")
         }
 )
 @Configuration
@@ -29,7 +29,7 @@ public class OpenApiConfig {
                                 .email("thalesgarcezf@gmail.com")
                                 .url("https://github.com/thalesF93")))
                 .externalDocs(new ExternalDocumentation()
-                        .description("Repositório do projeto")
+                        .description("Project Repository")
                         .url("https://github.com/thalesF93/bytebank"));
     }
     }
