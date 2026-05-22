@@ -79,7 +79,7 @@ class AccountServiceTest {
         UUID id = UUID.randomUUID();
         Account account = new Account();
         account.setId(id);
-        account.setActive(true);
+        account.setIsActive(true);
 
         when(accountRepository.findById(id)).thenReturn(Optional.of(account));
         var result = accountService.findAccountById(id);
@@ -106,19 +106,19 @@ class AccountServiceTest {
         UUID id = UUID.randomUUID();
         Account account = new Account();
         account.setId(id);
-        account.setActive(true);
+        account.setIsActive(true);
 
         when(accountRepository.findAccountByIdAndIsActiveTrue(id)).thenReturn(Optional.of(account));
         accountService.closeAccount(id);
 
-        assertThat(account.isActive()).isEqualTo(false);
+        assertThat(account.getIsActive()).isEqualTo(false);
     }
 
     @Test
     @DisplayName("Should throw Account not found exception by passing an inactive account")
     void mustThrowExceptionOnFindingAccountByIdAndIsActive(){
         Account account = new Account();
-        account.setActive(false);
+        account.setIsActive(false);
         account.setId(UUID.randomUUID());
 
         when(accountRepository.findAccountByIdAndIsActiveTrue(account.getId())).thenReturn(Optional.empty());
@@ -135,7 +135,7 @@ class AccountServiceTest {
     @DisplayName("Should throw Closing Account exception by passing an account with balance bigger tem 0")
     void mustThrowExceptionWhenClosingAccountAndBalanceIsPositive(){
         Account account = new Account();
-        account.setActive(false);
+        account.setIsActive(false);
         account.setId(UUID.randomUUID());
         account.setBalance(new BigDecimal("10"));
 

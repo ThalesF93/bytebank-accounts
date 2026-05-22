@@ -46,7 +46,7 @@ public class AccountServiceImpl implements AccountService {
             throw new DuplicateAccountException(account.getAccountNumber());
         }
 
-        account.setActive(true);
+        account.setIsActive(true);
         accountRepository.save(account);
 
         log.info("Account opened. accountId={}", account.getId());
@@ -73,7 +73,7 @@ public class AccountServiceImpl implements AccountService {
         if (account.getBalance().compareTo(BigDecimal.ZERO) > 0){
             throw new ClosingAccountException(id);
         }
-        account.setActive(false);
+        account.setIsActive(false);
         accountRepository.save(account);
         //accountRepository.deleteById(id);
     }
