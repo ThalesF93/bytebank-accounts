@@ -71,7 +71,7 @@ public class AccountController implements AccountControllerOpenApi {
 
     @GetMapping("/customer/{id}")
     public ResponseEntity<List<AccountResponseDTO>> getListAccountsByCustomer(@PathVariable UUID id){
-        return ResponseEntity.ok(accountService.listAccountByCostumer(id));
+        return ResponseEntity.ok(accountService.listAccountByCustomer(id));
     }
 
     @GetMapping("feign/customer/{id}")

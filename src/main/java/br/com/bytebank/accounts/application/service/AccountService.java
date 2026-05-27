@@ -26,7 +26,7 @@ public interface AccountService {
 
     void credit(DepositRequestDTO depositRequestDTO);
 
-    List<AccountResponseDTO> listAccountByCostumer(UUID id);
+    List<AccountResponseDTO> listAccountByCustomer(UUID id);
 
     BalanceResponseDTO getBalance(UUID id);
 

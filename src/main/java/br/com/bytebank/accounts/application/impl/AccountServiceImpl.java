@@ -131,7 +131,7 @@ public class AccountServiceImpl implements AccountService {
 
     @Override
     @Cacheable(value = "accounts-by-customer", key = "#id")
-    public List<AccountResponseDTO> listAccountByCostumer(UUID id) {
+    public List<AccountResponseDTO> listAccountByCustomer(UUID id) {
         CustomerClientResponseDTO customer;
        
         try {

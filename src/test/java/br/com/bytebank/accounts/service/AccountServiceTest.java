@@ -263,7 +263,7 @@ class AccountServiceTest {
         CustomerClientResponseDTO client = new CustomerClientResponseDTO(id, "any", "test@email.com");
         when(customerClient.findCustomerById(id)).thenReturn(client);
 
-        var result = accountService.listAccountByCostumer(id);
+        var result = accountService.listAccountByCustomer(id);
 
         assertThat(result).isNotNull();
     }
@@ -276,7 +276,7 @@ class AccountServiceTest {
         when(customerClient.findCustomerById(id)).thenThrow(FeignException.NotFound.class);
 
         assertThatExceptionOfType(CustomerNotFoundException.class)
-                .isThrownBy(() -> accountService.listAccountByCostumer(id))
+                .isThrownBy(() -> accountService.listAccountByCustomer(id))
                 .withMessage("Customer with id " + id + " not found");
     }
 
