@@ -23,6 +23,12 @@ public class Account {
 
     private static final SecureRandom SECURE_RANDOM = new SecureRandom();
 
+    private static final int ACCOUNT_NUMBER_MIN   = 10_000_000;
+    private static final int ACCOUNT_NUMBER_RANGE = 90_000_000;
+    private static final int AGENCY_MIN           = 100_000;
+    private static final int AGENCY_RANGE         = 900_000;
+    private static final int AGENCY_DIGITS        = 6;
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @EqualsAndHashCode.Include
@@ -64,12 +70,13 @@ public class Account {
     }
 
     private String generateAccountNumber(){
-        int number = SECURE_RANDOM.nextInt(90_000_000) + 10_000_000;
+        int number = SECURE_RANDOM.nextInt(ACCOUNT_NUMBER_RANGE) + ACCOUNT_NUMBER_MIN;
         return String.valueOf(number);
     }
 
     private String generateAgencyNumber(){
-        return String.format("%06d", SECURE_RANDOM.nextInt(900_000) + 100_000);
+        return String.format("%0" + AGENCY_DIGITS + "d",
+                SECURE_RANDOM.nextInt(AGENCY_RANGE) + AGENCY_MIN);
     }
 
 

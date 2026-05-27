@@ -63,3 +63,11 @@ springdoc:
     enabled: false
 server:
   address: 0.0.0.0
+
+bytebank:
+  accounts:
+    generation:
+      account-number-min: 10_000_000
+      account-number-range: 90_000_000
+      agency-min: 100_000
+      agency-range: 900_000
