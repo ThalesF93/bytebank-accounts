@@ -14,7 +14,7 @@ import java.util.UUID;
 
 public interface AccountService {
 
-    AccountResponseDTO openAccount(AccountRequestDTO accountRequestDTO);
+    AccountResponseDTO openAccount(UUID idempotencyKey, AccountRequestDTO accountRequestDTO);
 
     AccountResponseDTO findAccountById(UUID uuid);
 

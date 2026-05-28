@@ -10,6 +10,7 @@ import br.com.bytebank.accounts.domain.exception.customized_excpetions.*;
 import br.com.bytebank.accounts.infrastructure.feignclient.CustomerClient;
 import br.com.bytebank.accounts.infrastructure.messaging.AccountEventPublisher;
 import br.com.bytebank.accounts.infrastructure.repositories.AccountRepository;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import feign.FeignException;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -18,6 +19,8 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.ValueOperations;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -43,14 +46,28 @@ class AccountServiceTest {
     @Mock
     CustomerClient customerClient;
 
+    @Mock
+    RedisTemplate<String, Object> redisTemplate;
+
+    @Mock
+    ValueOperations<String, Object> valueOperations;
+
+    @Mock
+    ObjectMapper objectMapper;
+
     @Test
     @DisplayName("Should open account with customer ID from customerClient")
     void mustOpenAccount(){
-
+        UUID idempotencyKey = UUID.randomUUID();
         AccountRequestDTO accountDTO = new AccountRequestDTO(UUID.randomUUID());
 
-        AccountResponseDTO result = accountService.openAccount(accountDTO);
 
+
+        when(redisTemplate.opsForValue()).thenReturn(valueOperations);
+        when(valueOperations.get(anyString())).thenReturn(null);
+        when(redisTemplate.opsForValue().get(anyString())).thenReturn(null);
+
+        AccountResponseDTO result = accountService.openAccount(idempotencyKey,accountDTO);
         verify(accountRepository).save(Mockito.any(Account.class));
         verify(eventPublisher).publishAccountOpened(Mockito.eq(accountDTO.customerId()), Mockito.eq(result.accountId()));
 
@@ -61,14 +78,17 @@ class AccountServiceTest {
     @Test
     @DisplayName("Should return Duplicate Account Exception")
     void mustThrowExceptionOnOpeningAccount(){
+        UUID idempotencyKey = UUID.randomUUID();
         AccountRequestDTO accountDTO = new AccountRequestDTO(UUID.randomUUID());
         Account account = new Account();
         account.setCustomerId(accountDTO.customerId());
 
         Mockito.when(accountRepository.existsByAccountNumber(anyString())).thenReturn(true);
-
+        when(redisTemplate.opsForValue()).thenReturn(valueOperations);
+        when(valueOperations.get(anyString())).thenReturn(null);
+        when(redisTemplate.opsForValue().get(anyString())).thenReturn(null);
         assertThatExceptionOfType(DuplicateAccountException.class)
-                .isThrownBy(()-> accountService.openAccount(accountDTO));
+                .isThrownBy(()-> accountService.openAccount(idempotencyKey,accountDTO));
 
         verify(accountRepository, never()).save(any());
     }

@@ -29,9 +29,11 @@ public class AccountController implements AccountControllerOpenApi {
 
     @Override
     @PostMapping
-    public ResponseEntity<AccountResponseDTO> openAccount(@Valid @RequestBody AccountRequestDTO accountRequestDTO){
+    public ResponseEntity<AccountResponseDTO> openAccount(
+            @RequestHeader(value = "Idempotency-Key") UUID idempotencyKey,
+            @Valid @RequestBody AccountRequestDTO accountRequestDTO){
         log.info("Request received. endpoint=POST /accounts customerID={}", accountRequestDTO.customerId());
-        var account =  accountService.openAccount(accountRequestDTO);
+        var account =  accountService.openAccount(idempotencyKey ,accountRequestDTO);
         log.info("Request complete! Account Opened!");
         return ResponseEntity.status(HttpStatus.CREATED).body(account);
 

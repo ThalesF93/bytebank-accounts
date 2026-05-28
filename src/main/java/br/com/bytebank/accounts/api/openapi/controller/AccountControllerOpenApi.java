@@ -42,7 +42,12 @@ public interface AccountControllerOpenApi {
                     description = "Invalid request data",
                     content = @Content(schema = @Schema(implementation = ErrorResponse.class)))
     })
-    ResponseEntity<AccountResponseDTO> openAccount(@RequestBody(description = "DTO from account", required = true ) AccountRequestDTO accountRequestDTO);
+    ResponseEntity<AccountResponseDTO> openAccount(
+            @Parameter(
+                    description = "Unique key to ensure idempotency of the request",
+                    required = true
+            )  UUID idempotencyKey,
+            @RequestBody(description = "DTO from account", required = true ) AccountRequestDTO accountRequestDTO);
 
 
     @Operation(summary = "Find account by passing UUID")

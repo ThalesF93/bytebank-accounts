@@ -12,18 +12,25 @@ import br.com.bytebank.accounts.domain.exception.customized_excpetions.*;
 import br.com.bytebank.accounts.infrastructure.feignclient.CustomerClient;
 import br.com.bytebank.accounts.infrastructure.messaging.AccountEventPublisher;
 import br.com.bytebank.accounts.infrastructure.repositories.AccountRepository;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import feign.FeignException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
+import java.time.Duration;
 import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
+
+import static br.com.bytebank.accounts.domain.exception.customized_excpetions.IdempotencyCacheException.Operation.DESERIALIZE;
+import static br.com.bytebank.accounts.domain.exception.customized_excpetions.IdempotencyCacheException.Operation.SERIALIZE;
 
 
 @Service
@@ -34,10 +41,21 @@ public class AccountServiceImpl implements AccountService {
     private final AccountRepository accountRepository;
     private final CustomerClient customerClient;
     private final AccountEventPublisher eventPublisher;
+    private final ObjectMapper objectMapper;
+    private final RedisTemplate<String, Object> redisTemplate;
 
     @Transactional
     @Override
-    public AccountResponseDTO openAccount(AccountRequestDTO accountRequestDTO){
+    public AccountResponseDTO openAccount(UUID idempotencyKey, AccountRequestDTO accountRequestDTO){
+
+        String cacheKey = "idempotency:account:" + idempotencyKey;
+        Object cached = redisTemplate.opsForValue().get(cacheKey);
+
+        if (cached != null) {
+            log.info("Duplicate customer detected. idempotencyKey={}", idempotencyKey);
+            return fromIdempotencyCache(cached, AccountResponseDTO.class);
+        }
+
         Account account = new Account();
         account.setCustomerId(accountRequestDTO.customerId());
 
@@ -52,7 +70,11 @@ public class AccountServiceImpl implements AccountService {
         log.info("Account opened. accountId={}", account.getId());
         eventPublisher.publishAccountOpened(accountRequestDTO.customerId(), account.getId());
 
-        return new AccountResponseDTO(account.getId(), account.getCustomerId(), account.getAgency(), account.getBalance());
+        var response = new AccountResponseDTO(account.getId(), account.getCustomerId(), account.getAgency(), account.getBalance());
+
+        toIdempotencyCache(cacheKey, response);
+
+        return  response;
     }
 
     @Override
@@ -171,6 +193,22 @@ public class AccountServiceImpl implements AccountService {
     }
 
 
+    private void toIdempotencyCache(String cacheKey, Object value) {
+        try {
+            redisTemplate.opsForValue().set(cacheKey, objectMapper.writeValueAsString(value), Duration.ofHours(24));
+        } catch (JsonProcessingException e) {
+            log.error("Failed to serialize idempotency response. type={}", value.getClass().getSimpleName(), e);
+            throw new IdempotencyCacheException(SERIALIZE);
+        }
+    }
 
+    private <T> T fromIdempotencyCache(Object value, Class<T> clazz) {
+        try {
+            return objectMapper.readValue(value.toString(), clazz);
+        } catch (JsonProcessingException e) {
+            log.error("Failed to deserialize idempotency response. type={}", clazz.getSimpleName(), e);
+            throw new IdempotencyCacheException(DESERIALIZE);
+        }
+    }
 
 }

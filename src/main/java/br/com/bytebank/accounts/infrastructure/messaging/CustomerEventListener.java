@@ -23,7 +23,7 @@ public class CustomerEventListener {
     @RabbitListener(queues = RabbitMQConfig.QUEUE_CUSTOMER_CREATED)
     public void onCustomerCreated(CustomerCreatedEvent event) {
         log.info("Event received: CustomerCreatedEvent customerId={}", event.customerId());
-        service.openAccount(new AccountRequestDTO(event.customerId()));
+        service.openAccount(event.idempotencyKey(),new AccountRequestDTO(event.customerId()));
     }
 
     @RabbitListener(queues = RabbitMQConfig.QUEUE_CUSTOMER_CREATED_DLQ)
