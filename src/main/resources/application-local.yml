@@ -1,0 +1,27 @@
+spring:
+  cloud:
+    discovery:
+      enabled: false
+    openfeign:
+      client:
+        config:
+          bytebank-customer:
+            url: http://localhost:8081
+
+  data:
+    redis:
+      host: localhost
+      port: 6379
+
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: bytebank
+    password: bytebank123
+    listener:
+      simple:
+        auto-startup: false
+
+eureka:
+  client:
+    enabled: false
