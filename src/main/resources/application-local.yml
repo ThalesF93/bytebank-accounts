@@ -1,11 +1,24 @@
+server:
+  port: 8082
 spring:
+  application:
+    name: bytebank-accounts
   cloud:
     discovery:
-      enabled: false
+      enabled: true
     openfeign:
       httpclient:
         hc5:
           enabled: true
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5433/accounts_db
+    username: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD:supino2604}
 
   data:
     redis:
@@ -23,10 +36,15 @@ spring:
 
 eureka:
   client:
-    enabled: false
+    enabled: true
     service-url:
         defaultZone: ${EUREKA_DEFAULT_ZONE:http://localhost:8761/eureka/}
         register-with-eureka: true
         fetch-registry: true
   instance:
     prefer-ip-address: true
+
+management:
+  zipkin:
+    tracing:
+      endpoint: http://localhost:9411/api/v2/spans
