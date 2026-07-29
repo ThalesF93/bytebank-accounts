@@ -16,9 +16,9 @@ spring:
     show-sql: true
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5433/accounts_db
-    username: ${DB_USERNAME:postgres}
-    password: ${DB_PASSWORD:supino2604}
+    url: jdbc:postgresql://localhost:5432/accounts_db
+    username: ${DB_USERNAME:bytebank}
+    password: ${DB_PASSWORD:bytebank}
 
   data:
     redis:
@@ -32,7 +32,7 @@ spring:
     password: bytebank123
     listener:
       simple:
-        auto-startup: false
+        auto-startup: true
 
 eureka:
   client:

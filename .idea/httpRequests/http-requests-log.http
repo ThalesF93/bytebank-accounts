@@ -1,0 +1,162 @@
+GET http://localhost:8082/api/v1/accounts/listAll
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2026.1.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2026-07-29T190540.200.json
+
+###
+
+GET http://localhost:8082/api/v1/accounts/listAll
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2026.1.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2026-07-29T180155.200.json
+
+###
+
+GET http://localhost:8082/api/v1/accounts/listAll
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2026.1.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2026-07-29T150626.200.json
+
+###
+
+GET http://localhost:8082/api/v1/accounts/listAll
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2026.1.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2026-07-29T150358.200.json
+
+###
+
+GET http://localhost:8082/api/v1/accounts/listAll
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2026.1.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2026-07-07T211048.200.json
+
+###
+
+GET http://localhost:8082/api/v1/accounts/listAll
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2026.1.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2026-06-22T210920.200.json
+
+###
+
+GET http://localhost:8082/api/v1/accounts/listAll
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2026.1.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2026-06-22T174831.200.json
+
+###
+
+GET http://localhost:8082/api/v1/accounts/feign/customer/4190576d-1957-494a-802d-9ccec6123488
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2026.1.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2026-06-18T171358.200.json
+
+###
+
+GET http://localhost:8082/api/v1/accounts/listAll
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2026.1.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2026-06-18T171347.200.json
+
+###
+
+GET http://localhost:8082/api/v1/accounts/feign/customer/3843f36a-077f-43ef-bae7-06d6ebf14d53
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2026.1.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2026-06-18T171337.200.json
+
+###
+
+GET http://localhost:8082/api/v1/accounts/feign/customer/3843f36a-077f-43ef-bae7-06d6ebf14d53
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2026.1.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2026-06-18T125217.200.json
+
+###
+
+GET http://localhost:8082/api/v1/accounts/listAll
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2026.1.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2026-06-18T124908.200.json
+
+###
+
+GET http://localhost:8082/api/v1/accounts/listAll
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2026.1.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2026-06-18T123517.200.json
+
+###
+
+GET http://localhost:8082/api/v1/accounts/listAll
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2026.1.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2026-06-17T143119.200.json
+
+###
+
+GET http://localhost:8082/api/v1/accounts/listAll
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2026.1.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2026-06-17T143003.200.json
+
+###
+
+GET http://localhost:8082/api/v1/accounts/listAll
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2026.1.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2026-06-17T142941.200.json
+
+###
+
+GET http://localhost:8082/api/v1/accounts/listAll
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2026.1.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2026-06-17T142534.200.json
+
+###
+
+GET http://localhost:8082/api/v1/accounts/listAll
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2026.1.3
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+<> 2026-06-17T142520.200.json
+
+###
+

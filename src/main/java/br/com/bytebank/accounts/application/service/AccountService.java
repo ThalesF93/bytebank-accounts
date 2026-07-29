@@ -34,5 +34,7 @@ public interface AccountService {
 
     CustomerClientResponseDTO findCustomerByAccountId(UUID id);
 
+    AccountResponseDTO findAccountByCustomerId(UUID id);
+
 
 }

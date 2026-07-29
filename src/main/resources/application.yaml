@@ -7,8 +7,8 @@ spring:
   rabbitmq:
     host: ${SPRING_RABBITMQ_HOST:localhost}
     port: 5672
-    username: guest
-    password: guest
+    username: ${RABBITMQ_USER:bytebank}
+    password: ${RABBITMQ_PASS:bytebank123}
     listener:
       simple:
         retry:
@@ -39,9 +39,9 @@ spring:
         dialect: org.hibernate.dialect.PostgreSQLDialect
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5433/accounts_db
-    username: ${DB_USERNAME:postgres}
-    password: ${DB_PASSWORD:supino2604}
+    url: jdbc:postgresql://localhost:5432/accounts_db
+    username: ${DB_USERNAME:bytebank}
+    password: ${DB_PASSWORD:bytebank}
 server:
   port: 8082
 eureka:

@@ -1,0 +1,14 @@
+[
+  {
+    "accountId": "4190576d-1957-494a-802d-9ccec6123488",
+    "clientId": "9aadff27-c9e6-4a77-8dfd-cd1c7d6d53dc",
+    "agencyNumber": "516370",
+    "balance": 50.00
+  },
+  {
+    "accountId": "3843f36a-077f-43ef-bae7-06d6ebf14d53",
+    "clientId": "5db209a9-7062-48b3-8dd9-b2746f3035fb",
+    "agencyNumber": "609319",
+    "balance": 960.00
+  }
+]
