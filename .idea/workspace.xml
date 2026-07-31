@@ -6,17 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="c4146032-c0d9-4434-b9df-57dec636181e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker_accounts/docker-compose.dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/accounts.json" beforeDir="false" afterPath="$PROJECT_DIR$/logs/accounts.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/accounts.json.2026-05-28.0.gz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/accounts.json.2026-05-29.0.gz" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/bytebank/accounts/api/controller/AccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/bytebank/accounts/api/controller/AccountController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/bytebank/accounts/api/openapi/controller/AccountControllerOpenApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/bytebank/accounts/api/openapi/controller/AccountControllerOpenApi.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/com/bytebank/accounts/application/impl/AccountServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/bytebank/accounts/application/impl/AccountServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/bytebank/accounts/application/service/AccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/bytebank/accounts/application/service/AccountService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/bytebank/accounts/infrastructure/repositories/AccountRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/bytebank/accounts/infrastructure/repositories/AccountRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application-local.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application-local.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/br/com/bytebank/accounts/service/AccountServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/br/com/bytebank/accounts/service/AccountServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,7 +16,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="81" />
+    <option name="cachedIndexableFilesCount" value="85" />
     <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="ExternalProjectsData">
@@ -80,7 +72,7 @@
   }
 }</component>
   <component name="HttpClientEndpointsTabState">
-    <option name="cachedRequestData" value="&lt;CachedHttpClientTabRequests&gt;&#10;  &lt;entry key=&quot;d5f71b701b1b80d8792fcdcf7361501e197aca29&quot; value=&quot;###&amp;#10;GET http://localhost:8082/api/v1/accounts/listAll&quot; /&gt;&#10;&lt;/CachedHttpClientTabRequests&gt;" />
+    <option name="cachedRequestData" value="&lt;CachedHttpClientTabRequests /&gt;" />
   </component>
   <component name="HttpClientOnboardingState">{
   &quot;isOnboardingCommentShown&quot;: true
@@ -95,61 +87,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="0.0" />
-      <entry key="MS500" value="0.0" />
-      <entry key="S2" value="1.345583534015018E-299" />
-      <entry key="S5" value="3.90802010829721E-120" />
-      <entry key="S10" value="3.0205504760418494E-60" />
-      <entry key="S30" value="3.9455575608534056E-20" />
-      <entry key="S60" value="6.386098558909526E-10" />
-      <entry key="M2" value="1.0392042701456171E-4" />
-      <entry key="M5" value="0.15910353085160547" />
-      <entry key="M10" value="2.0137633678181395" />
-      <entry key="M15" value="5.081162561608832" />
-      <entry key="M30" value="15.765451445758385" />
-      <entry key="H1" value="38.21480332188199" />
-      <entry key="H2" value="74.62376656573778" />
-      <entry key="H4" value="113.57189136862522" />
-      <entry key="D1" value="169.04919776143262" />
-      <entry key="W1" value="181.76683927062172" />
+      <entry key="MS100" value="7.88927865613073E-7" />
+      <entry key="MS500" value="0.2043139891912768" />
+      <entry key="S2" value="2.815653366609257" />
+      <entry key="S5" value="5.962005280640969" />
+      <entry key="S10" value="10.03327142535098" />
+      <entry key="S30" value="16.939916543256256" />
+      <entry key="S60" value="19.92961703289463" />
+      <entry key="M2" value="21.788876090826566" />
+      <entry key="M5" value="23.193909434331964" />
+      <entry key="M10" value="25.331319635876643" />
+      <entry key="M15" value="28.408483205090494" />
+      <entry key="M30" value="39.046923641843435" />
+      <entry key="H1" value="61.452117175865574" />
+      <entry key="H2" value="97.91447046685536" />
+      <entry key="H4" value="137.04152552999176" />
+      <entry key="D1" value="192.9190312128525" />
+      <entry key="W1" value="205.74687504709112" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="1.0" />
-      <entry key="MS500" value="1.0" />
-      <entry key="S2" value="1.0" />
-      <entry key="S5" value="1.000000007674926" />
-      <entry key="S10" value="1.0000876066554112" />
-      <entry key="S30" value="1.0444132308138439" />
-      <entry key="S60" value="1.2107444693617397" />
-      <entry key="M2" value="1.4592469478047336" />
-      <entry key="M5" value="1.979570412946238" />
-      <entry key="M10" value="4.709873719285641" />
-      <entry key="M15" value="8.44338673747314" />
-      <entry key="M30" value="17.508408570607006" />
-      <entry key="H1" value="27.39183967108166" />
-      <entry key="H2" value="36.266539015568014" />
-      <entry key="H4" value="43.071540567155765" />
-      <entry key="D1" value="51.040981070404136" />
-      <entry key="W1" value="52.711120043796484" />
+      <entry key="MS100" value="1.0003624325123606" />
+      <entry key="MS500" value="1.2050432277991816" />
+      <entry key="S2" value="1.6729168836518178" />
+      <entry key="S5" value="1.855900775466059" />
+      <entry key="S10" value="1.9966735936838933" />
+      <entry key="S30" value="2.8647791565675087" />
+      <entry key="S60" value="3.883342742460547" />
+      <entry key="M2" value="4.940783335320408" />
+      <entry key="M5" value="6.187607182505214" />
+      <entry key="M10" value="9.015765775829683" />
+      <entry key="M15" value="12.713544936321886" />
+      <entry key="M30" value="21.816575466149583" />
+      <entry key="H1" value="31.866506473497797" />
+      <entry key="H2" value="40.92316276963729" />
+      <entry key="H4" value="47.86890436450208" />
+      <entry key="D1" value="56.00116830038629" />
+      <entry key="W1" value="57.70525168292624" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.0017360208616534574" />
-      <entry key="MS500" value="0.2804858701326211" />
-      <entry key="S2" value="0.7277425144527" />
-      <entry key="S5" value="0.8806251858981439" />
-      <entry key="S10" value="0.9384985715149835" />
-      <entry key="S30" value="1.0225258483645865" />
-      <entry key="S60" value="1.1980052988957068" />
-      <entry key="M2" value="1.4516615826816703" />
-      <entry key="M5" value="2.1336024570081173" />
-      <entry key="M10" value="6.713302051355615" />
-      <entry key="M15" value="13.510305329170324" />
-      <entry key="M30" value="33.257776425021945" />
-      <entry key="H1" value="65.59383745825842" />
-      <entry key="H2" value="110.88188982228887" />
-      <entry key="H4" value="156.6385047555482" />
-      <entry key="D1" value="220.08922628813406" />
-      <entry key="W1" value="234.47781945952912" />
+      <entry key="MS100" value="0.0321450098317733" />
+      <entry key="MS500" value="0.8143862533791223" />
+      <entry key="S2" value="4.225354223777232" />
+      <entry key="S5" value="7.692779291405183" />
+      <entry key="S10" value="11.956532064592045" />
+      <entry key="S30" value="19.757893636375723" />
+      <entry key="S60" value="23.777354886553404" />
+      <entry key="M2" value="26.705767787848806" />
+      <entry key="M5" value="29.368461603016318" />
+      <entry key="M10" value="34.33309185848936" />
+      <entry key="M15" value="41.105575162646915" />
+      <entry key="M30" value="60.84635716461524" />
+      <entry key="H1" value="93.30522590605212" />
+      <entry key="H2" value="138.8288807501571" />
+      <entry key="H4" value="184.90531831584116" />
+      <entry key="D1" value="248.91921319962026" />
+      <entry key="W1" value="263.4519819622446" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
@@ -160,48 +152,49 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Docker.accounts_docker/docker-compose.dev.yml: Compose Deployment.executor": "Run",
-    "Docker.compose.yml.accounts-db: Compose Deployment.executor": "Run",
-    "Docker.docker_accounts/docker-compose.dev.yml: Compose Deployment.executor": "Run",
-    "Gradle.AccountServiceTest.executor": "Run",
-    "Gradle.Build bytebank-accounts.executor": "Run",
-    "HTTP Request.bytebank_accounts-endpoints_1 | #1.executor": "Run",
-    "HTTP Request.bytebank_accounts-endpoints_2 | #1.executor": "Run",
-    "HTTP Request.bytebank_accounts-endpoints_3 | #1.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.MCP Project settings loaded": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "Spring Boot.AccountsApplication.executor": "Run",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "feaure/develop",
-    "junie.onboarding.icon.badge.shown": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/User/OneDrive/Documentos/Java Projetos 2026/Bytebank-PoliRepo/bytebank-accounts",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "C:/Users/User/OneDrive/Documentos/Java Projetos 2026/ByteBank/bytebank-accounts/src/main/java/org/thales/Main.java",
-    "to.speed.mode.migration.done": "true",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Docker.accounts_docker/docker-compose.dev.yml: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.compose.yml.accounts-db: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.docker_accounts/docker-compose.dev.yml: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.AccountServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.AccountServiceTest.mustOpenAccount.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Build bytebank-accounts.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.bytebank_accounts-endpoints_1 | #1.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.bytebank_accounts-endpoints_2 | #1.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.bytebank_accounts-endpoints_3 | #1.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;Spring Boot.AccountsApplication.executor&quot;: &quot;Run&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feaure/develop&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/User/OneDrive/Documentos/Java Projetos 2026/Bytebank-PoliRepo/bytebank-accounts&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/User/OneDrive/Documentos/Java Projetos 2026/ByteBank/bytebank-accounts/src/main/java/org/thales/Main.java&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\User\OneDrive\Documentos\Java Projetos 2026\Bytebank-PoliRepo\bytebank-accounts" />
@@ -222,7 +215,34 @@
       </map>
     </option>
   </component>
-  <component name="RunManager" selected="HTTP Request.bytebank_accounts-endpoints_3 | #1">
+  <component name="RunManager" selected="Gradle.AccountServiceTest.mustOpenAccount">
+    <configuration name="AccountServiceTest.mustOpenAccount" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;br.com.bytebank.accounts.service.AccountServiceTest.mustOpenAccount&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <ExternalSystemDebugDisabled>false</ExternalSystemDebugDisabled>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <GradleProfilingDisabled>false</GradleProfilingDisabled>
+      <GradleCoverageDisabled>false</GradleCoverageDisabled>
+      <method v="2" />
+    </configuration>
     <configuration name="bytebank_accounts-endpoints | #1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/bytebank_accounts-endpoints.http" executionIdentifier="#1" runType="Run single request">
       <method v="2" />
     </configuration>
@@ -265,21 +285,8 @@
       </deployment>
       <method v="2" />
     </configuration>
-    <configuration name="compose.yml.accounts-db: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
-      <deployment type="docker-compose.yml">
-        <settings>
-          <option name="services">
-            <list>
-              <option value="accounts-db" />
-            </list>
-          </option>
-          <option name="sourceFilePath" value="compose.yml" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
     <list>
-      <item itemvalue="Docker.compose.yml.accounts-db: Compose Deployment" />
+      <item itemvalue="Gradle.AccountServiceTest.mustOpenAccount" />
       <item itemvalue="HTTP Request.bytebank_accounts-endpoints_3 | #1" />
       <item itemvalue="HTTP Request.bytebank_accounts-endpoints_1 | #1" />
       <item itemvalue="HTTP Request.bytebank_accounts-endpoints_2 | #1" />
@@ -288,11 +295,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.AccountServiceTest.mustOpenAccount" />
         <item itemvalue="HTTP Request.bytebank_accounts-endpoints_3 | #1" />
         <item itemvalue="HTTP Request.bytebank_accounts-endpoints_1 | #1" />
         <item itemvalue="HTTP Request.bytebank_accounts-endpoints_2 | #1" />
         <item itemvalue="HTTP Request.bytebank_accounts-endpoints | #1" />
-        <item itemvalue="Docker.compose.yml.accounts-db: Compose Deployment" />
       </list>
     </recent_temporary>
   </component>
@@ -330,6 +337,8 @@
       <workItem from="1782433183800" duration="1269000" />
       <workItem from="1783469438133" duration="1092000" />
       <workItem from="1785348220031" duration="356000" />
+      <workItem from="1785358913375" duration="6026000" />
+      <workItem from="1785374785043" duration="242000" />
     </task>
     <servers />
   </component>

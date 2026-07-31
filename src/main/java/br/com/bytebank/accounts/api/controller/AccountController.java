@@ -87,7 +87,7 @@ public class AccountController implements AccountControllerOpenApi {
         return ResponseEntity.ok(accountService.showAccountsByBalance());
     }
 
-    @GetMapping("/customer/{customerId}")
+    @GetMapping("/customer/{customerId}/account")
     @Override
     public ResponseEntity<AccountResponseDTO> findAccountByCustomerId(@PathVariable UUID customerId){
         return ResponseEntity.ok(accountService.findAccountByCustomerId(customerId));

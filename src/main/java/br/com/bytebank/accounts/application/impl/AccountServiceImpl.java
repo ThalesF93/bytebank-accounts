@@ -127,7 +127,8 @@ public class AccountServiceImpl implements AccountService {
         } catch (FeignException.NotFound e) {
             throw new CustomerNotFoundException(account.getCustomerId());
         }
-
+        log.info("Customer data: id={} name={} phone={} email={}",
+                customer.id(), customer.name(), customer.phone(), customer.email());
         return new CustomerClientResponseDTO(customer.id(), customer.name(), customer.phone(), customer.email());
     }
 
