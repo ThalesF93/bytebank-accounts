@@ -186,4 +186,19 @@ public interface AccountControllerOpenApi {
     })
     ResponseEntity<List<AccountResponseDTO>> listAllAccountsByBalance();
 
+    @Operation(summary = "Find an account by customer ID")
+    @ApiResponses({
+            @ApiResponse(
+                    responseCode = "200",
+                    description = "Find specific account by customer ID",
+                    content = @Content(schema = @Schema(implementation = AccountResponseDTO.class))
+            ),
+            @ApiResponse(
+                    responseCode = "404",
+                    description = "Account not Found",
+                    content = @Content(schema = @Schema(implementation = ErrorResponse.class))
+            )
+    })
+    ResponseEntity<AccountResponseDTO> findAccountByCustomerId(@PathVariable UUID customerId);
+
 }

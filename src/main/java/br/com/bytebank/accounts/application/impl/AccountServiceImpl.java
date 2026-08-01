@@ -127,8 +127,9 @@ public class AccountServiceImpl implements AccountService {
         } catch (FeignException.NotFound e) {
             throw new CustomerNotFoundException(account.getCustomerId());
         }
-
-        return new CustomerClientResponseDTO(customer.id(), customer.name(), customer.email());
+        log.info("Customer data: id={} name={} phone={} email={}",
+                customer.id(), customer.name(), customer.phone(), customer.email());
+        return new CustomerClientResponseDTO(customer.id(), customer.name(), customer.phone(), customer.email());
     }
 
 
@@ -149,6 +150,14 @@ public class AccountServiceImpl implements AccountService {
 
         account.setBalance(account.getBalance().add(depositRequestDTO.amount()));
         accountRepository.save(account);
+    }
+
+    @Override
+    public AccountResponseDTO findAccountByCustomerId(UUID id){
+        var response = accountRepository.findAccountByCustomerId(id)
+                .orElseThrow(()-> new AccountNotFoundException(id));
+
+        return new AccountResponseDTO(response);
     }
 
     @Override

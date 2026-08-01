@@ -197,7 +197,7 @@ class AccountServiceTest {
         Account account = new Account();
         account.setId(id);
 
-        CustomerClientResponseDTO customer = new CustomerClientResponseDTO(UUID.randomUUID(), "any", "any@email.com");
+        CustomerClientResponseDTO customer = new CustomerClientResponseDTO(UUID.randomUUID(), "any", "any","any@email.com");
 
         when(accountRepository.findById(id)).thenReturn(Optional.of(account));
         when(customerClient.findCustomerById(account.getCustomerId())).thenReturn(customer);
@@ -280,7 +280,7 @@ class AccountServiceTest {
     @DisplayName("Should return a list of all accounts from specific customer")
     void mustListAccountsByCustomerId(){
         UUID id = UUID.randomUUID();
-        CustomerClientResponseDTO client = new CustomerClientResponseDTO(id, "any", "test@email.com");
+        CustomerClientResponseDTO client = new CustomerClientResponseDTO(id, "any", "any" ,  "test@email.com");
         when(customerClient.findCustomerById(id)).thenReturn(client);
 
         var result = accountService.listAccountByCustomer(id);
